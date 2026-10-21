@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace KerangkaGame
 {
+    enum ModePindah
+    {
+        Console = 1,
+        Keyboard = 2
+    }
+
     class Karakter
     {
         public string nama { get; private set; }
@@ -54,31 +60,70 @@ namespace KerangkaGame
             }
         }
         
-        public void PindahPosisi()
+        public void PindahPosisi(ModePindah mode)
         {
             Console.WriteLine($"posisi saat ini : {posisiSekarang}");
-            Console.WriteLine("Tekan Arrow KIRI untuk menambah");
-            Console.WriteLine("Tekan Arrow KANAN untuk mengurangi");
-            Console.WriteLine("Tekan Esc untuk selesai.");
 
-            while (true)
+            if (mode == ModePindah.Console)
             {
-                ConsoleKeyInfo key = Console.ReadKey(true);
+                Console.WriteLine("Mode Console: masukkan angka untuk mengubah posisi.");
+                Console.WriteLine("Angka positif menambah, angka negatif mengurangi.");
+                Console.WriteLine("Ketik 0 atau kosongkan untuk selesai.");
 
-                if (key.Key == ConsoleKey.LeftArrow)
+                while (true)
                 {
-                    posisiSekarang += 1;
-                    Console.WriteLine($"Arrow Kiri ditekan, posisi saat ini : {posisiSekarang}");
+                    Console.Write("Masukkan perpindahan angka: ");
+                    string input = Console.ReadLine()?.Trim();
+
+                    if (string.IsNullOrEmpty(input))
+                    {
+                        Console.WriteLine($"Pindah selesai, posisi akhir : {posisiSekarang}");
+                        break;
+                    }
+
+                    if (int.TryParse(input, out int perpindahan))
+                    {
+                        if (perpindahan == 0)
+                        {
+                            Console.WriteLine($"Pindah selesai, posisi akhir : {posisiSekarang}");
+                            break;
+                        }
+
+                        posisiSekarang += perpindahan;
+                        Console.WriteLine($"Angka {perpindahan} diterima, posisi saat ini : {posisiSekarang}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input tidak valid, masukkan angka bulat saja.");
+                    }
                 }
-                else if (key.Key == ConsoleKey.RightArrow)
+            }
+            else
+            {
+                Console.WriteLine("Mode Keyboard:");
+                Console.WriteLine("Tekan Arrow KIRI untuk menambah");
+                Console.WriteLine("Tekan Arrow KANAN untuk mengurangi");
+                Console.WriteLine("Tekan Esc untuk selesai.");
+
+                while (true)
                 {
-                    posisiSekarang -= 1;
-                    Console.WriteLine($"Arrow Kanan ditekan, posisi saat ini : {posisiSekarang}");
-                }
-                else if (key.Key == ConsoleKey.Enter || key.Key == ConsoleKey.Escape)
-                {
-                    Console.WriteLine($"Pindah selesai, posisi akhir : {posisiSekarang}");
-                    break;
+                    ConsoleKeyInfo key = Console.ReadKey(true);
+
+                    if (key.Key == ConsoleKey.LeftArrow)
+                    {
+                        posisiSekarang += 1;
+                        Console.WriteLine($"Arrow Kiri ditekan, posisi saat ini : {posisiSekarang}");
+                    }
+                    else if (key.Key == ConsoleKey.RightArrow)
+                    {
+                        posisiSekarang -= 1;
+                        Console.WriteLine($"Arrow Kanan ditekan, posisi saat ini : {posisiSekarang}");
+                    }
+                    else if (key.Key == ConsoleKey.Enter || key.Key == ConsoleKey.Escape)
+                    {
+                        Console.WriteLine($"Pindah selesai, posisi akhir : {posisiSekarang}");
+                        break;
+                    }
                 }
             }
         }
@@ -91,6 +136,33 @@ namespace KerangkaGame
 
     class MainProgram
     {
+        static ModePindah PilihMode()
+        {
+            while (true)
+            {
+                Console.WriteLine("Pilih mode perpindahan posisi:");
+                Console.WriteLine("1. Mode Console (perpindahan angka)");
+                Console.WriteLine("2. Mode Keyboard (Arrow Kiri/Kanan, Esc untuk selesai)");
+                Console.Write("Masukkan pilihan (1 atau 2): ");
+
+                string input = Console.ReadLine()?.Trim();
+
+                if (input == "1")
+                {
+                    Console.WriteLine("Anda memilih Mode Console.");
+                    return ModePindah.Console;
+                }
+                if (input == "2")
+                {
+                    Console.WriteLine("Anda memilih Mode Keyboard.");
+                    return ModePindah.Keyboard;
+                }
+
+                Console.WriteLine("Pilihan tidak valid, silakan pilih 1 atau 2.");
+                Console.WriteLine();
+            }
+        }
+
         static void Main(string[] args)
         {
             Karakter player1 = new Karakter("Asep", 100, 10, 0); 
@@ -100,8 +172,10 @@ namespace KerangkaGame
             player1.getData();
 
             Console.WriteLine();
-            
-            player1.PindahPosisi();
+
+            ModePindah mode = PilihMode();
+            Console.WriteLine();
+            player1.PindahPosisi(mode);
 
             Console.WriteLine();
             musuh.Heal();
