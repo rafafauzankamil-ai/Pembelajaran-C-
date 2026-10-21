@@ -59,7 +59,7 @@ namespace KerangkaGame
             Console.WriteLine($"posisi saat ini : {posisiSekarang}");
             Console.WriteLine("Tekan Arrow KIRI untuk menambah");
             Console.WriteLine("Tekan Arrow KANAN untuk mengurangi");
-            Console.WriteLine("Tekan Enter atau Esc untuk selesai.");
+            Console.WriteLine("Tekan Esc untuk selesai.");
 
             while (true)
             {
