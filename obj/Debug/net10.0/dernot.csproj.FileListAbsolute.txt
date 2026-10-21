@@ -1,0 +1,14 @@
+/home/nthcorner/Downloads/document/dernot/bin/Debug/net10.0/dernot
+/home/nthcorner/Downloads/document/dernot/bin/Debug/net10.0/dernot.deps.json
+/home/nthcorner/Downloads/document/dernot/bin/Debug/net10.0/dernot.runtimeconfig.json
+/home/nthcorner/Downloads/document/dernot/bin/Debug/net10.0/dernot.dll
+/home/nthcorner/Downloads/document/dernot/bin/Debug/net10.0/dernot.pdb
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.GeneratedMSBuildEditorConfig.editorconfig
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.AssemblyInfoInputs.cache
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.AssemblyInfo.cs
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.csproj.CoreCompileInputs.cache
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.dll
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/refint/dernot.dll
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.pdb
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.genruntimeconfig.cache
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/ref/dernot.dll
