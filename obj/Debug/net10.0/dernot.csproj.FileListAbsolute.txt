@@ -12,3 +12,4 @@
 /home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.pdb
 /home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.genruntimeconfig.cache
 /home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/ref/dernot.dll
+/home/nthcorner/Downloads/document/dernot/obj/Debug/net10.0/dernot.sourcelink.json

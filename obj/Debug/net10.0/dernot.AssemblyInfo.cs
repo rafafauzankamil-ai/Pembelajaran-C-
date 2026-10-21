@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dernot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edf64bf47ac44cc4da140a362191c3c3a863f302")]
 [assembly: System.Reflection.AssemblyProductAttribute("dernot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dernot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

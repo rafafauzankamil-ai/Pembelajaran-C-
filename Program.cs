@@ -57,19 +57,29 @@ namespace KerangkaGame
         public void PindahPosisi()
         {
             Console.WriteLine($"posisi saat ini : {posisiSekarang}");
-            Console.Write("jumlah pindah : ");
-            
-            // Membaca input dari terminal dan mengubahnya menjadi angka (integer)
-            string input = Console.ReadLine();
-            
-            if (int.TryParse(input, out int jumlahPindah))
+            Console.WriteLine("Tekan Arrow KIRI untuk menambah");
+            Console.WriteLine("Tekan Arrow KANAN untuk mengurangi");
+            Console.WriteLine("Tekan Enter atau Esc untuk selesai.");
+
+            while (true)
             {
-                posisiSekarang += jumlahPindah;
-                Console.WriteLine($"pindah sebanyak {jumlahPindah}, posisi saat ini : {posisiSekarang}");
-            }
-            else
-            {
-                Console.WriteLine("Input tidak valid! Harap masukkan angka.");
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.LeftArrow)
+                {
+                    posisiSekarang += 1;
+                    Console.WriteLine($"Arrow Kiri ditekan, posisi saat ini : {posisiSekarang}");
+                }
+                else if (key.Key == ConsoleKey.RightArrow)
+                {
+                    posisiSekarang -= 1;
+                    Console.WriteLine($"Arrow Kanan ditekan, posisi saat ini : {posisiSekarang}");
+                }
+                else if (key.Key == ConsoleKey.Enter || key.Key == ConsoleKey.Escape)
+                {
+                    Console.WriteLine($"Pindah selesai, posisi akhir : {posisiSekarang}");
+                    break;
+                }
             }
         }
 
